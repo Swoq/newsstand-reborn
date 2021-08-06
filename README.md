@@ -3,7 +3,7 @@
 [![MIT License][license-shield]][license-url]
 [![LinkedIn][linkedin-shield]][linkedin-url]
 
-![Product Name Screen Shot](readme-resources/logo.png)
+![Product Name Screen Shot](readme-resources/logo.jpg)
 
 <!-- TABLE OF CONTENTS -->
 <details open="open">
