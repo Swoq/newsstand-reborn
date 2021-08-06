@@ -1,5 +1,6 @@
 [![Contributors][contributors-shield]][contributors-url]
 [![Issues][issues-shield]][issues-url]
+[![Issues-closed][issues-closed-shield]][issues-url]
 [![MIT License][license-shield]][license-url]
 [![LinkedIn][linkedin-shield]][linkedin-url]
 
@@ -115,15 +116,17 @@ Project Link: [https://github.com/Swoq/newsstand-reborn](https://github.com/Swoq
 <!-- MARKDOWN LINKS & IMAGES -->
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
 
-[contributors-shield]: https://img.shields.io/github/contributors/othneildrew/Best-README-Template.svg?style=for-the-badge
+[contributors-shield]: https://img.shields.io/github/contributors/Swoq/newsstand-reborn?style=for-the-badge
 
 [contributors-url]: https://github.com/Swoq/newsstand-reborn/graphs/contributors
 
-[issues-shield]: https://img.shields.io/github/issues/othneildrew/Best-README-Template.svg?style=for-the-badge
+[issues-shield]: https://img.shields.io/github/issues/Swoq/newsstand-reborn?style=for-the-badge
 
 [issues-url]: https://github.com/Swoq/newsstand-reborn/issues
 
-[license-shield]: https://img.shields.io/github/license/othneildrew/Best-README-Template.svg?style=for-the-badge
+[issues-closed-shield]: https://img.shields.io/github/issues-closed/Swoq/newsstand-reborn?style=for-the-badge
+
+[license-shield]: https://img.shields.io/github/license/Swoq/newsstand-reborn?style=for-the-badge
 
 [license-url]: https://github.com/othneildrew/Best-README-Template/blob/master/LICENSE.txt
 
