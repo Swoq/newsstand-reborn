@@ -1,4 +1,4 @@
-package com.swoqe.newsstandreborn;
+package com.swoqe.newsstand;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
