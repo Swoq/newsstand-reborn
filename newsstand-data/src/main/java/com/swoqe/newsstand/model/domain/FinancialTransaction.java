@@ -1,22 +1,22 @@
-package com.swoqe.newsstand.model;
+package com.swoqe.newsstand.model.domain;
 
 import lombok.NoArgsConstructor;
 import org.hibernate.annotations.Immutable;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.OneToOne;
+import javax.persistence.*;
 import java.time.Instant;
 
 @Entity
+@Table(name = "transactions")
 @NoArgsConstructor
 @Immutable
 public final class FinancialTransaction extends BaseEntity {
 
-    @Column(nullable = false)
-    private Instant timestamp;
+    @Column(nullable = false, name = "instant")
+    private Instant instant;
 
-    @Column(nullable = false)
+    @Column(nullable = false, name = "status")
+    @Enumerated(value = EnumType.STRING)
     private FinancialTransactionStatus status;
 
     @OneToOne
@@ -24,7 +24,7 @@ public final class FinancialTransaction extends BaseEntity {
     private Subscription subscription;
 
     private FinancialTransaction(Instant timestamp, FinancialTransactionStatus status, Subscription subscription) {
-        this.timestamp = timestamp;
+        this.instant = timestamp;
         this.status = status;
         this.subscription = subscription;
     }
@@ -41,7 +41,7 @@ public final class FinancialTransaction extends BaseEntity {
 
         FinancialTransaction that = (FinancialTransaction) o;
 
-        if (!timestamp.equals(that.timestamp)) return false;
+        if (!instant.equals(that.instant)) return false;
         if (status != that.status) return false;
         return subscription.equals(that.subscription);
     }
@@ -49,7 +49,7 @@ public final class FinancialTransaction extends BaseEntity {
     @Override
     public int hashCode() {
         int result = super.hashCode();
-        result = 31 * result + timestamp.hashCode();
+        result = 31 * result + instant.hashCode();
         result = 31 * result + status.hashCode();
         result = 31 * result + subscription.hashCode();
         return result;

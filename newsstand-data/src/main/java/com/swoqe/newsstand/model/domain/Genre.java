@@ -1,28 +1,29 @@
-package com.swoqe.newsstand.model;
+package com.swoqe.newsstand.model.domain;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
 
-import javax.persistence.Entity;
-import javax.persistence.Lob;
-import javax.persistence.ManyToMany;
-import java.util.List;
+import javax.persistence.*;
+import java.util.Set;
 
-@EqualsAndHashCode(callSuper = true)
 @Entity
+@Table(name = "genres")
+@EqualsAndHashCode(callSuper = true)
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
 public class Genre extends BaseEntity {
 
+    @Column(name = "name")
     private String genreName;
 
     @Lob
+    @Column(name = "description")
     private String description;
 
     @ManyToMany(mappedBy = "genres")
-    private List<Publication> publications;
+    private Set<Publication> publications;
 
 }

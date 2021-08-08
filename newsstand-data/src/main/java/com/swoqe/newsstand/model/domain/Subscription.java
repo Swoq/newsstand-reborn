@@ -1,29 +1,30 @@
-package com.swoqe.newsstand.model;
+package com.swoqe.newsstand.model.domain;
 
 import lombok.NoArgsConstructor;
 import org.hibernate.annotations.Immutable;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.ManyToOne;
+import javax.persistence.*;
 import java.time.LocalDate;
 
 @Entity
+@Table(name = "subscriptions")
 @NoArgsConstructor
 @Immutable
 public final class Subscription extends BaseEntity {
 
-    @Column(nullable = false)
+    @Column(nullable = false, name = "start_date")
     private LocalDate startDate;
 
-    @Column(nullable = false)
+    @Column(nullable = false, name = "end_date")
     private LocalDate endDate;
 
     @ManyToOne
+    @JoinColumn(name = "user_id")
     @Column(nullable = false)
     private User user;
 
     @ManyToOne
+    @JoinColumn(name = "rate_id")
     @Column(nullable = false)
     private Rate rate;
 

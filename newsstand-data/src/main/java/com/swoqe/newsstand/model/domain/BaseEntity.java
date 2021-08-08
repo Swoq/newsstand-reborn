@@ -1,4 +1,4 @@
-package com.swoqe.newsstand.model;
+package com.swoqe.newsstand.model.domain;
 
 import lombok.Data;
 
