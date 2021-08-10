@@ -1,8 +1,6 @@
 package com.swoqe.newsstand.model.domain;
 
-import lombok.EqualsAndHashCode;
-import lombok.Getter;
-import lombok.Setter;
+import lombok.*;
 
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -11,6 +9,8 @@ import javax.persistence.MappedSuperclass;
 import java.io.Serializable;
 
 @EqualsAndHashCode
+@AllArgsConstructor
+@NoArgsConstructor
 @Getter
 @Setter
 @MappedSuperclass

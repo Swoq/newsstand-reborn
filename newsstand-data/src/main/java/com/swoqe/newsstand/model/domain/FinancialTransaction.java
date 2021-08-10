@@ -23,13 +23,14 @@ public final class FinancialTransaction extends BaseEntity {
     @Enumerated(value = EnumType.STRING)
     private FinancialTransactionStatus status;
 
-    private FinancialTransaction(Instant timestamp, FinancialTransactionStatus status) {
+    private FinancialTransaction(Long id, Instant timestamp, FinancialTransactionStatus status) {
+        super(id);
         this.instant = timestamp;
         this.status = status;
     }
 
-    public static FinancialTransaction newInstance(Instant timestamp, FinancialTransactionStatus status) {
-        return new FinancialTransaction(timestamp, status);
+    public static FinancialTransaction newInstance(Long id, Instant timestamp, FinancialTransactionStatus status) {
+        return new FinancialTransaction(id, timestamp, status);
     }
 
     @Override
