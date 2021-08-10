@@ -53,6 +53,27 @@ The system administrator has the rights to: adding, deleting and editing publica
 additional users with administrator rights can add new periods for subscriptions if no one from existed meets the
 requirements.
 
+Main technical requirements:
+
+1. The design of the code must comply with the Java Code Convention.
+2. Subject area information should be stored in a relational database (it is recommended to use MySQL or PostgreSQL as a
+   database).
+3. The application must support work with the Cyrillic alphabet (be multilingual), including when storing information in
+   the database:
+   1. it must be possible to switch the interface language;
+   2. there should be support for input, output and storage of information (in the database), recorded in different
+      languages;
+4. Implement protection against re-sending data to the server when refreshing the page (implement PRG).
+5. The application must be implemented authentication and authorization, delimitation of access rights of system users
+   to program components. Password encryption.
+6. Introduce an event log into the project using the log4j2 library.
+7. The code must be documented (all top-level classes, non-trivial methods and constructors).
+8. The application should be covered by modular tests (minimum coverage 70%). Integration tests.
+9. Implement the mechanism of pagination of data pages.
+10. All input fields must be with data validation.
+11. The application must respond correctly to errors and exceptions of various kinds (the end user should not see the
+    stack trace on the client side).
+
 ![Product Name Screen Shot](readme-resources/erd.png)
 
 ### Built With
