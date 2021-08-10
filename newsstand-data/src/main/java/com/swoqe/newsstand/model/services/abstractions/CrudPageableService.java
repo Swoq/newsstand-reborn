@@ -1,4 +1,4 @@
-package com.swoqe.newsstand.model.services;
+package com.swoqe.newsstand.model.services.abstractions;
 
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
