@@ -23,18 +23,15 @@ public final class Subscription extends BaseEntity {
     private LocalDate endDate;
 
     @ManyToOne
-    @JoinColumn(name = "user_id")
-    @Column(nullable = false)
+    @JoinColumn(name = "user_id", nullable = false)
     private User user;
 
     @ManyToOne
-    @JoinColumn(name = "rate_id")
-    @Column(nullable = false)
+    @JoinColumn(name = "rate_id", nullable = false)
     private Rate rate;
 
     @OneToOne
-    @JoinColumn(name = "transaction_id")
-    @Column(nullable = false)
+    @JoinColumn(name = "transaction_id", nullable = false)
     private FinancialTransaction transaction;
 
     private Subscription(LocalDate startDate, LocalDate endDate, User user, Rate rate, FinancialTransaction transaction) {
