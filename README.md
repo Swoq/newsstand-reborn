@@ -56,8 +56,7 @@ requirements.
 Main technical requirements:
 
 1. The design of the code must comply with the Java Code Convention.
-2. Subject area information should be stored in a relational database (it is recommended to use MySQL or PostgreSQL as a
-   database).
+2. Subject area information should be stored in a relational database.
 3. The application must support work with the Cyrillic alphabet (be multilingual), including when storing information in
    the database:
    1. it must be possible to switch the interface language;
