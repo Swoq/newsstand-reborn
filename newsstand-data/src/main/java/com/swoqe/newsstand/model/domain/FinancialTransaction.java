@@ -1,6 +1,8 @@
 package com.swoqe.newsstand.model.domain;
 
+import lombok.Getter;
 import lombok.NoArgsConstructor;
+import lombok.ToString;
 import org.hibernate.annotations.Immutable;
 
 import javax.persistence.*;
@@ -9,6 +11,8 @@ import java.time.Instant;
 @Entity
 @Table(name = "transactions")
 @NoArgsConstructor
+@ToString
+@Getter
 @Immutable
 public final class FinancialTransaction extends BaseEntity {
 
@@ -19,18 +23,13 @@ public final class FinancialTransaction extends BaseEntity {
     @Enumerated(value = EnumType.STRING)
     private FinancialTransactionStatus status;
 
-    @OneToOne
-    @Column(nullable = false)
-    private Subscription subscription;
-
-    private FinancialTransaction(Instant timestamp, FinancialTransactionStatus status, Subscription subscription) {
+    private FinancialTransaction(Instant timestamp, FinancialTransactionStatus status) {
         this.instant = timestamp;
         this.status = status;
-        this.subscription = subscription;
     }
 
-    public static FinancialTransaction newInstance(Instant timestamp, FinancialTransactionStatus status, Subscription subscription) {
-        return new FinancialTransaction(timestamp, status, subscription);
+    public static FinancialTransaction newInstance(Instant timestamp, FinancialTransactionStatus status) {
+        return new FinancialTransaction(timestamp, status);
     }
 
     @Override
@@ -42,8 +41,7 @@ public final class FinancialTransaction extends BaseEntity {
         FinancialTransaction that = (FinancialTransaction) o;
 
         if (!instant.equals(that.instant)) return false;
-        if (status != that.status) return false;
-        return subscription.equals(that.subscription);
+        return status == that.status;
     }
 
     @Override
@@ -51,7 +49,6 @@ public final class FinancialTransaction extends BaseEntity {
         int result = super.hashCode();
         result = 31 * result + instant.hashCode();
         result = 31 * result + status.hashCode();
-        result = 31 * result + subscription.hashCode();
         return result;
     }
 }
