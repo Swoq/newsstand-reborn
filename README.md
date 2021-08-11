@@ -3,6 +3,7 @@
 [![Issues-closed][issues-closed-shield]][issues-url]
 [![MIT License][license-shield]][license-url]
 [![LinkedIn][linkedin-shield]][linkedin-url]
+[![CircleCI](https://circleci.com/gh/Swoq/newsstand-reborn/tree/dev.svg?style=svg)](https://circleci.com/gh/Swoq/newsstand-reborn/tree/dev)
 
 ![Product Name Screen Shot](readme-resources/logo.jpg)
 
