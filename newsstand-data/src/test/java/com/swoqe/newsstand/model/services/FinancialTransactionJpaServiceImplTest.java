@@ -64,13 +64,14 @@ class FinancialTransactionJpaServiceImplTest {
     }
 
     @Test
-    void testFindByIdNotFound() {
+    void testFindByIdThrowsNotFound() {
         when(repository.findById(expectedId)).thenReturn(Optional.empty());
 
-        FinancialTransaction received = service.findById(expectedId);
+        RuntimeException thrown = assertThrows(IllegalArgumentException.class, () -> {
+            FinancialTransaction received = service.findById(expectedId);
+        });
+        assertEquals("Object not found!", thrown.getMessage());
 
-        assertNull(received);
-        verify(repository).findById(anyLong());
     }
 
     @Test

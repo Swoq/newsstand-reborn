@@ -20,7 +20,7 @@ public abstract class AbstractJpaService<T extends BaseEntity, R extends JpaRepo
 
     @Override
     public T findById(Long id) {
-        return repository.findById(id).orElse(null);
+        return repository.findById(id).orElseThrow(() -> new IllegalArgumentException("Object not found!"));
     }
 
     @Override
